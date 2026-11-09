@@ -856,10 +856,6 @@ color: gray-light
 
 :: right ::
 
-<AdmonitionType type='info'>
-<mdi-help-circle-outline /> <b>Where to get help</b>
-</AdmonitionType>
-
 **Questions & discussion**
 
 - <a href="https://questions.belle2.org/questions/">questions.belle2.org</a> — the computing Q&A forum
@@ -870,7 +866,7 @@ color: gray-light
 
 **Documentation**
 
-- Belle II computing iWiki (BASF2 / gbasf2 / grid guides)
+- <a href="https://software.belle2.org/development/sphinx/online_book/computing/computing_system.html">Belle II computing documentation</a> — online book (BASF2 / gbasf2 / grid)
 
 <br>
 
