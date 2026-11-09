@@ -1086,32 +1086,40 @@ color: gray-light
 </div>
 
 ---
-layout: top-title
+layout: top-title-two-cols
 color: gray-light
+align: c-lt-lt
 ---
 
 :: title ::
 
 # Summary — do it this week
 
-:: content ::
+:: left ::
 
-<div class="step-list mt-4">
+<div class="step-list mt-2">
   <div><span class="step-no">1</span><div><strong>Check your IHEP Account login and LDAP email</strong>— everything hangs on these two.</div></div>
-  <div><span class="step-no">2</span><div><strong>Decide your English name spelling</strong>— once, forever.</div></div>
-  <div><span class="step-no">3</span><div><strong>Request / migrate your certificate at gridca.ihep.ac.cn</strong>— IHEP Account login → User Certificate, or the IHEP-2013 migration entry.</div></div>
-  <div><span class="step-no">4</span><div><strong>Install to browser + <code>.globus</code></strong>— bring a working proxy to the hands-on session.</div></div>
+  <div><span class="step-no">2</span><div><strong>Request / migrate your certificate</strong>at <a href="https://gridca.ihep.ac.cn/webui/ihepca/">gridca.ihep.ac.cn</a> — new request, or the IHEP-2013 migration entry.</div></div>
+  <div><span class="step-no">3</span><div><strong>Install to browser + <code>.globus</code></strong>— bring a working proxy to the hands-on session.</div></div>
+  <div><span class="step-no">4</span><div><strong>Register / update your VOMS membership</strong>join the belle VO — or add your new DN.</div></div>
 </div>
 
-<br>
-
+<div class="mt-2">
 <AdmonitionType type='important'>
-<b>Deadline:</b> old-CA certificates stop being recognized at the <b>end of 2026</b>. School hands-on sessions assume you already hold a new certificate.
+<b>Deadline:</b> old-CA certificates stop being recognized at the <b>end of 2026</b>.
 </AdmonitionType>
+</div>
 
-<br>
+:: right ::
 
-**Documentation:** the full *IHEPCA User Guide* (WebUI screenshots, EST script details, FAQ) is distributed with the announcement email and at the school.
+<div class="step-list mt-2">
+  <div><mdi-certificate /><div><strong>IHEP CA WebUI</strong><a href="https://gridca.ihep.ac.cn/webui/ihepca/">gridca.ihep.ac.cn/webui/ihepca</a></div></div>
+  <div><mdi-book-open-variant /><div><strong>IHEP CA user guide</strong><a href="https://cchelp.ihep.ac.cn/grid/new-ca/">cchelp.ihep.ac.cn/grid/new-ca</a></div></div>
+  <div><mdi-book-open-variant /><div><strong>gbasf2 user manual</strong><a href="https://software.belle2.org/development/sphinx/online_book/computing/gbasf2.html">Belle II online book — gbasf2</a></div></div>
+  <div><mdi-account-group-outline /><div><strong>Belle II VOMS</strong><a href="https://voms.cc.kek.jp:8443/voms/belle/user/home.action">voms.cc.kek.jp/voms/belle</a></div></div>
+  <div><mdi-help-circle-outline /><div><strong>Questions &amp; forum</strong><a href="https://questions.belle2.org/questions/">questions.belle2.org</a></div></div>
+  <div><mdi-monitor-dashboard /><div><strong>DIRAC portal</strong><a href="https://dirac.cc.kek.jp:8443/DIRAC/">dirac.cc.kek.jp/DIRAC</a></div></div>
+</div>
 
 ---
 layout: cover
