@@ -123,7 +123,7 @@ color: gray-light
 | Dimension | Old (OpenCA) | New (OpenXPKI) |
 |---|---|---|
 | URL | cagrid.ihep.ac.cn | **gridca.ihep.ac.cn** |
-| Login | Basic web form | **IHEP SSO** + cert migration |
+| Login | Basic web form | **IHEP Account** + cert migration |
 | Approval | Offline email | **Online RA workflow** |
 | Key generation | Browser-dependent | **Server-side, RSA 4096** |
 | Automation | None | **EST · API** |
@@ -152,7 +152,7 @@ color: gray-light
 :: content ::
 
 <div class="check-grid mt-4">
-  <div><mdi-check-circle-outline /><div><strong>IHEP SSO / LDAP account works</strong><span>You will log in to the CA WebUI with your usual IHEP username and password. Test it at login.ihep.ac.cn first.</span></div></div>
+  <div><mdi-check-circle-outline /><div><strong>IHEP Account / LDAP login works</strong><span>You will log in to the CA WebUI with your usual IHEP username and password (IHEP Account, formerly IHEP SSO). Test it at <a href="https://login.ihep.ac.cn/">login.ihep.ac.cn</a> first.</span></div></div>
   <div><mdi-check-circle-outline /><div><strong>Your LDAP email is correct</strong><span>It becomes the certificate's email SAN, and the system uses it for ownership and notifications. Wrong email → lost certificates.</span></div></div>
   <div><mdi-check-circle-outline /><div><strong>Decide your English name spelling</strong><span>The certificate Subject needs ASCII letters only (space, dot, hyphen, apostrophe allowed). Use the same spelling forever — renewals must match.</span></div></div>
   <div><mdi-check-circle-outline /><div><strong>Prepare an export password</strong><span>A secret only you know, used to encrypt the downloaded <code>.p12</code> file. It is <b>not</b> your LDAP password and cannot be recovered by the CA.</span></div></div>
@@ -209,14 +209,15 @@ color: gray-light
 
 ```text
 subject=C=CN, O=HEP, O=IHEP, OU=CC, CN=hanx14, CN=Xiao Han
-issuer =C=CN, O=HEP,
-        CN=Institute of High Energy Physics Certification Authority 2026
+issuer=C=CN, O=HEP, CN=Institute of High Energy Physics Certification Authority 2026
 ```
 
+<div class="mt-5">
 <AdmonitionType type='note'>
 In slash form — used by VOMS and older grid tools — your DN is:
 <code>/C=CN/O=HEP/O=IHEP/OU=CC/CN=hanx14/CN=Xiao Han</code>. Grid services map it to VOMS roles and DIRAC accounts: <b>keep your name spelling forever</b>.
 </AdmonitionType>
+</div>
 
 ---
 layout: section
@@ -233,13 +234,13 @@ align: c-lt-lt
 
 :: title ::
 
-# Step 1 — Log in with IHEP SSO
+# Step 1 — Log in with IHEP Account
 
 :: left ::
 
 <div class="step-list">
-  <div><span class="step-no">1</span><div><strong>Open the WebUI</strong>https://gridca.ihep.ac.cn/webui/ihepca/ — HTTPS only.</div></div>
-  <div><span class="step-no">2</span><div><strong>Choose authentication method</strong>In the dropdown select <b>IHEP SSO</b>.</div></div>
+  <div><span class="step-no">1</span><div><strong>Open the WebUI</strong><a href="https://gridca.ihep.ac.cn/webui/ihepca/">https://gridca.ihep.ac.cn/webui/ihepca/</a> — HTTPS only.</div></div>
+  <div><span class="step-no">2</span><div><strong>Choose authentication method</strong>In the dropdown select <b>IHEP Account</b> (formerly IHEP SSO).</div></div>
   <div><span class="step-no">3</span><div><strong>Enter LDAP credentials</strong>Username + password, then <b>Login</b>.</div></div>
   <div><span class="step-no">4</span><div><strong>Verify your account</strong>Top-right corner must show <b>your</b> account. Logout via the button — not by closing the tab.</div></div>
 </div>
@@ -253,7 +254,7 @@ align: c-lt-lt
 <div class="shot-real">
   <img src="/01.login.png" alt="WebUI login page" />
 </div>
-<div class="shot-caption">The WebUI login page — pick <b>IHEP SSO</b> in the Authentication method dropdown.</div>
+<div class="shot-caption">The WebUI login page — pick <b>IHEP Account</b> in the Authentication method dropdown.</div>
 
 ---
 layout: top-title-two-cols
@@ -279,18 +280,18 @@ align: c-lt-lt
 - Status, history, and error messages
 - Bookmark the workflow ID before contacting support
 
-<br>
-
-<AdmonitionType type='info'>
-These two pages answer 90% of "where is my certificate" questions. If a certificate is not in <b>My Certificates</b>, check which account (email) you logged in with.
-</AdmonitionType>
-
 :: right ::
 
 <div class="shot-real tall">
   <img src="/02.home.png" alt="Home page after login" />
 </div>
 <div class="shot-caption">After login — the top menu with <b>Request Certificate</b>.</div>
+
+<div class="mt-3">
+<AdmonitionType type='info'>
+These two pages answer 90% of "where is my certificate" questions. If a certificate is not in <b>My Certificates</b>, check which account (email) you logged in with.
+</AdmonitionType>
+</div>
 
 ---
 layout: top-title-two-cols
@@ -316,18 +317,18 @@ align: c-lt-lt
 - **Robot Certificate** — for experiment services and pilots (§7)
 - **Host Certificate** — for machines (§7)
 
-<br>
-
-<AdmonitionType type='note'>
-<b>Continue</b> only saves and moves to the next page. <b>Submit</b> is what actually sends the request to the system and RA. Review the summary before every Submit.
-</AdmonitionType>
-
 :: right ::
 
 <div class="shot-real tall">
   <img src="/03.profile.png" alt="Select Profile page" />
 </div>
 <div class="shot-caption"><b>Select Profile</b> — User Certificate is the default.</div>
+
+<div class="mt-3">
+<AdmonitionType type='note'>
+<b>Continue</b> only saves and moves to the next page. <b>Submit</b> is what actually sends the request to the system and RA. Review the summary before every Submit.
+</AdmonitionType>
+</div>
 
 ---
 layout: top-title-two-cols
@@ -500,9 +501,9 @@ align: c-lt-lt
 
 <div class="step-list mt-2">
   <div><span class="step-no">1</span><div>Install the old personal certificate <b>with its private key</b> into your browser first.</div></div>
-  <div><span class="step-no">2</span><div>At the WebUI login choose <b>IHEP-2013 certificate migration</b>.</div></div>
-  <div><span class="step-no">3</span><div>Pick your <b>personal</b> cert (not a Host/RA cert) in the browser popup.</div></div>
-  <div><span class="step-no">4</span><div>Identity fields are taken from the old cert + LDAP — no re-typing. Set an export password, submit, download.</div></div>
+  <div><span class="step-no">2</span><div>Open the WebUI — the browser immediately pops up the <b>certificate selection</b>: pick your <b>personal</b> IHEP-2013 certificate (not a Host/RA cert).</div></div>
+  <div><span class="step-no">3</span><div>In <b>Authentication method</b> choose <b>IHEP-2013 certificate migration</b> and click <b>Login</b>.</div></div>
+  <div><span class="step-no">4</span><div>Identity fields are <b>auto-filled</b> from the old cert + LDAP — no re-typing. Set a password, submit, download.</div></div>
 </div>
 
 <br>
@@ -510,14 +511,19 @@ align: c-lt-lt
 **Rules:**
 
 - One migration **per LDAP account** — ever
-- Old cert expired/revoked, or email mismatch → use the normal SSO request instead
+- Old cert expired/revoked, or email mismatch → use the normal IHEP Account request instead
 
 :: right ::
 
-<div class="shot-real tall">
-  <img src="/08.migration_login.png" alt="Migration login option" />
+<div class="shot-real" style="max-height:215px">
+  <img src="/17.migration_profile.png" alt="Migration profile auto-selected" style="max-height:215px" />
 </div>
-<div class="shot-caption">The login page — choose <b>IHEP-2013 certificate migration</b>.</div>
+<div class="shot-caption">Profile <b>auto-selected</b>: Migrate IHEP-2013 User Certificate.</div>
+
+<div class="shot-real mt-2" style="max-height:215px">
+  <img src="/18.migration_subject.png" alt="Migration subject auto-filled" style="max-height:215px" />
+</div>
+<div class="shot-caption">Subject <b>auto-filled</b> from the old certificate and LDAP — read-only.</div>
 
 ---
 layout: section
@@ -1046,9 +1052,9 @@ color: gray-light
 :: content ::
 
 <div class="step-list mt-4">
-  <div><span class="step-no">1</span><div><strong>Check your IHEP SSO login and LDAP email</strong>— everything hangs on these two.</div></div>
+  <div><span class="step-no">1</span><div><strong>Check your IHEP Account login and LDAP email</strong>— everything hangs on these two.</div></div>
   <div><span class="step-no">2</span><div><strong>Decide your English name spelling</strong>— once, forever.</div></div>
-  <div><span class="step-no">3</span><div><strong>Request / migrate your certificate at gridca.ihep.ac.cn</strong>— SSO login → User Certificate, or the IHEP-2013 migration entry.</div></div>
+  <div><span class="step-no">3</span><div><strong>Request / migrate your certificate at gridca.ihep.ac.cn</strong>— IHEP Account login → User Certificate, or the IHEP-2013 migration entry.</div></div>
   <div><span class="step-no">4</span><div><strong>Install to browser + <code>.globus</code></strong>— bring a working proxy to the hands-on session.</div></div>
 </div>
 
