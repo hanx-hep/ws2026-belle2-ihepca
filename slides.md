@@ -583,16 +583,18 @@ align: c-lt-lt
   <div><span class="step-no">4</span><div><strong>Continue → SUCCESS → Download</strong>save the file <b>immediately</b>.</div></div>
 </div>
 
-<AdmonitionType type='warning'>
-The download entry <b>disappears once you leave the SUCCESS page</b>. If you miss it, reopen the certificate and start the download action again.
-</AdmonitionType>
-
 :: right ::
 
 <div class="shot-real tall">
   <img src="/13.download_password.png" alt="Specify Required Format page" />
 </div>
 <div class="shot-caption"><b>Specify Required Format</b> — PKCS12, Private Key Password, Export Password.</div>
+
+<div class="mt-3">
+<AdmonitionType type='warning'>
+The download entry <b>disappears once you leave the SUCCESS page</b>. If you miss it, reopen the certificate and start the download action again.
+</AdmonitionType>
+</div>
 
 ---
 layout: top-title-two-cols
@@ -613,18 +615,18 @@ align: c-lt-lt
   <div><span class="step-no">4</span><div><strong>Try a client-cert website</strong>pick your new certificate when the browser asks.</div></div>
 </div>
 
-<br>
-
-<AdmonitionType type='important'>
-Importing only a <code>.crt</code>/<code>.pem</code> (public part) does <b>not</b> work — the browser needs the private key, which lives in the <code>.p12</code>.
-</AdmonitionType>
-
 :: right ::
 
 <div class="shot-real tall">
   <img src="/10.firefox_certs.png" alt="Firefox certificate manager" />
 </div>
 <div class="shot-caption">Firefox <b>Certificate Manager → Your Certificates → Import</b> — pick your <code>.p12</code> and enter the Export Password.</div>
+
+<div class="mt-3">
+<AdmonitionType type='important'>
+Importing only a <code>.crt</code>/<code>.pem</code> (public part) does <b>not</b> work — the browser needs the private key, which lives in the <code>.p12</code>.
+</AdmonitionType>
+</div>
 
 <div class="text-sm mt-3" style="opacity:.75"><mdi-lightbulb-on-outline /> Tip: stick to one browser through apply → download → import, and avoid browser updates mid-workflow.</div>
 
@@ -682,16 +684,18 @@ align: c-lt-lt
   <div><span class="step-no">4</span><div><strong>Done</strong>your DN now carries the <code>/belle</code> roles used by grid services.</div></div>
 </div>
 
-<AdmonitionType type='warning'>
-Membership binds to your <b>DN</b>. A normal renewal keeps your DN — membership survives. But if your DN ever changes (different name spelling), you must register again.
-</AdmonitionType>
-
 :: right ::
 
 <div class="shot-real tall">
   <img src="/11.voms.png" alt="VOMS admin page for the belle VO" />
 </div>
 <div class="shot-caption"><b>VOMS Admin for the belle VO</b> — log in with your certificate; your DN and membership appear on your profile page.</div>
+
+<div class="mt-3">
+<AdmonitionType type='warning'>
+Membership binds to your <b>DN</b>. A normal renewal keeps your DN — membership survives. But if your DN ever changes (different name spelling), you must register again.
+</AdmonitionType>
+</div>
 
 ---
 layout: top-title-two-cols
@@ -878,7 +882,6 @@ color: gray-light
 **When to revoke immediately:**
 
 - Private key or `.p12` suspected leaked
-- Laptop with the key lost/stolen
 - You stop being the responsible person (Robot/Host)
 
 **How:**
@@ -891,7 +894,7 @@ color: gray-light
 
 :: right ::
 
-<AdmonitionType type='warning'>
+<AdmonitionType type='important'>
 <b>Revocation is irreversible.</b> If the key may be compromised: stop using it first, then revoke — do not wait for expiry, and do not just delete local files (copies may exist elsewhere).
 </AdmonitionType>
 
