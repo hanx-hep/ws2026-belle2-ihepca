@@ -111,50 +111,6 @@ color: gray-light
 
 :: title ::
 
-# Your analysis needs a working certificate
-
-:: left ::
-
-<AdmonitionType type='info'>
-<mdi-certificate /> A grid certificate is your <b>digital identity</b> for Belle II distributed computing. Every member accessing grid resources must hold a valid one.
-</AdmonitionType>
-
-**Where it is used:**
-
-- <mdi-function-variant /> **gBASF2** — submit analysis jobs to the Belle II grid
-- <mdi-server /> **DIRAC / grid storage** — authenticate to SEs and services
-- <mdi-account-key /> **VOMS proxies** — `voms-proxy-init` extends your cert with Belle II roles
-
-**The chain:**
-
-```text
-Certificate (1 year) → VOMS proxy (hours) → Grid access
-```
-
-:: right ::
-
-<AdmonitionType type='important'>
-<b>Winter School requirement</b> — this school asks every student to prepare in advance:
-
-> 申请 Belle II 成员及 KEKCC 账号（含 DESY 账号和 <b>GRID 证书</b>）
-
-</AdmonitionType>
-
-<br>
-
-**If you do not have a certificate yet:**
-
-- Apply **this week** — RA approval takes time
-- Bring your laptop with a working browser — we will go through it together
-- Old-CA certificates stop working at the **end of 2026**
-
----
-layout: top-title-two-cols
-color: gray-light
----
-
-:: title ::
-
 # What changed: OpenCA → OpenXPKI
 
 :: left ::
@@ -204,9 +160,11 @@ color: gray-light
   <div><mdi-check-circle-outline /><div><strong>Prepare an export password</strong><span>A secret only you know, used to encrypt the downloaded <code>.p12</code> file. It is <b>not</b> your LDAP password and cannot be recovered by the CA.</span></div></div>
 </div>
 
+<div class="mt-5">
 <AdmonitionType type='note'>
 Open <b>https://gridca.ihep.ac.cn/webui/ihepca/</b> in a modern browser (Firefox recommended). The WebUI, EST and login all require HTTPS.
 </AdmonitionType>
+</div>
 
 ---
 layout: top-title
@@ -249,14 +207,17 @@ color: gray-light
 | Issuer · CRL URL · Certificate Policies | The certificate itself | No |
 | Requester · Owner email · Comment | OpenXPKI system metadata | Only via workflow / RA |
 
-**Example user certificate Subject:**
+**Your real certificate, as openssl shows it:**
 
 ```text
-CN=Xiao Han,OU=Computing Center,O=IHEP,O=HEP,C=CN
+subject=C=CN, O=HEP, O=IHEP, OU=CC, CN=hanx14, CN=Xiao Han
+issuer =C=CN, O=HEP,
+        CN=Institute of High Energy Physics Certification Authority 2026
 ```
 
 <AdmonitionType type='note'>
-Grid services map your DN to VOMS roles and DIRAC accounts — <b>keep your name spelling forever</b>.
+In slash form — used by VOMS and older grid tools — your DN is:
+<code>/C=CN/O=HEP/O=IHEP/OU=CC/CN=hanx14/CN=Xiao Han</code>. Grid services map it to VOMS roles and DIRAC accounts: <b>keep your name spelling forever</b>.
 </AdmonitionType>
 
 ---
@@ -291,12 +252,10 @@ align: c-lt-lt
 
 :: right ::
 
-<div class="shot">
-  <mdi-monitor-screenshot class="shot-icon" />
-  <div class="shot-name">Screenshot 01 · WebUI Login Page</div>
-  <div class="shot-desc">Authentication method dropdown with "IHEP SSO" selected, LDAP username/password fields and the Login button</div>
-  <div class="shot-file">→ public/01.login.png</div>
+<div class="shot-real">
+  <img src="/01.login.png" alt="WebUI login page" />
 </div>
+<div class="shot-caption">The WebUI login page — pick <b>IHEP SSO</b> in the Authentication method dropdown.</div>
 
 ---
 layout: top-title-two-cols
@@ -330,12 +289,10 @@ These two pages answer 90% of "where is my certificate" questions. If a certific
 
 :: right ::
 
-<div class="shot tall">
-  <mdi-monitor-screenshot class="shot-icon" />
-  <div class="shot-name">Screenshot 02 · Home Dashboard</div>
-  <div class="shot-desc">Post-login dashboard with the left menu visible: Home → My Certificates / My Workflows, and the Request entry</div>
-  <div class="shot-file">→ public/02.home.png</div>
+<div class="shot-real tall">
+  <img src="/02.home.png" alt="Home page after login" />
 </div>
+<div class="shot-caption">After login — the top menu with <b>Request Certificate</b>.</div>
 
 ---
 layout: top-title-two-cols
@@ -350,8 +307,8 @@ align: c-lt-lt
 :: left ::
 
 <div class="step-list">
-  <div><span class="step-no">1</span><div><strong>Left menu → Request → Request Certificate</strong></div></div>
-  <div><span class="step-no">2</span><div><strong>Select Profile: User Certificate</strong>Then click <b>Select Profile</b> / <b>Start Workflow</b>.</div></div>
+  <div><span class="step-no">1</span><div><strong>Top menu → Request Certificate</strong>(<b>Request → Request Certificate</b> in older menus.)</div></div>
+  <div><span class="step-no">2</span><div><strong>Select Profile: User Certificate</strong>It is the default — click <b>Continue</b>.</div></div>
 </div>
 
 <br>
@@ -369,12 +326,10 @@ align: c-lt-lt
 
 :: right ::
 
-<div class="shot tall">
-  <mdi-monitor-screenshot class="shot-icon" />
-  <div class="shot-name">Screenshot 03 · Profile Selection</div>
-  <div class="shot-desc">Select Profile page listing User Certificate / Robot Certificate / Host Certificate, with User Certificate chosen</div>
-  <div class="shot-file">→ public/03.profile.png</div>
+<div class="shot-real tall">
+  <img src="/03.profile.png" alt="Select Profile page" />
 </div>
+<div class="shot-caption"><b>Select Profile</b> — User Certificate is the default.</div>
 
 ---
 layout: top-title-two-cols
@@ -397,12 +352,10 @@ align: c-lt-lt
 
 :: right ::
 
-<div class="shot tall">
-  <mdi-monitor-screenshot class="shot-icon" />
-  <div class="shot-name">Screenshot 04 · Edit Subject Page</div>
-  <div class="shot-desc">User certificate subject form: First/Last name inputs, locked Username, OU/O dropdowns, LDAP-provided SAN email</div>
-  <div class="shot-file">→ public/04.edit_subject.png</div>
+<div class="shot-real tall">
+  <img src="/04.edit_subject.png" alt="Edit Subject page" />
 </div>
+<div class="shot-caption"><b>Edit Subject</b> — type your ASCII name; Username and email come from LDAP.</div>
 
 ---
 layout: top-title-two-cols
@@ -428,12 +381,10 @@ Nothing here changes your identity — identity fields come from LDAP. Comment i
 
 :: right ::
 
-<div class="shot tall">
-  <mdi-monitor-screenshot class="shot-icon" />
-  <div class="shot-name">Screenshot 05 · Edit Certificate Info</div>
-  <div class="shot-desc">Certificate info form: Email address, Requester, Comment field, Continue button</div>
-  <div class="shot-file">→ public/05.cert_info.png</div>
+<div class="shot-real tall">
+  <img src="/05.cert_info.png" alt="Edit Certificate Info page" />
 </div>
+<div class="shot-caption"><b>Edit Certificate Info</b> — write your application reason in Comment.</div>
 
 ---
 layout: top-title-two-cols
@@ -443,30 +394,26 @@ align: c-lt-lt
 
 :: title ::
 
-# Step 6 — Set the export password
+# Step 6 — Review and submit
 
 :: left ::
 
 <div class="step-list">
-  <div><span class="step-no">1</span><div><strong>Type a password twice</strong>Both entries must match. This encrypts the <code>.p12</code> you will download.</div></div>
-  <div><span class="step-no">2</span><div><strong>Memorize it</strong>The CA cannot recover it. Losing it means starting a new request.</div></div>
-  <div><span class="step-no">3</span><div><strong>Submit</strong>The request now enters the RA approval queue.</div></div>
+  <div><span class="step-no">1</span><div><strong>Review Request</strong>check <b>Certificate Subject</b>, <b>SAN</b>, <b>Profile</b>, <b>Requester Information</b>; use <b>Edit Subject / Edit Certificate Info</b> to go back and fix anything.</div></div>
+  <div><span class="step-no">2</span><div><strong>Submit request</strong></div></div>
+  <div><span class="step-no">3</span><div><strong>Duplicate warning?</strong>Failed Policy Check means a repeated application — click <b>Submit with Policy Exception</b> and justify it (e.g. lost private-key password).</div></div>
 </div>
 
-<br>
-
-<AdmonitionType type='important'>
-This password protects your <b>private key</b> on disk. Make it long, unique, and never share it — support will never ask for it.
+<AdmonitionType type='note'>
+Policy-exception requests show <b>Policy Violation Pending</b> and may take a little longer to be reviewed.
 </AdmonitionType>
 
 :: right ::
 
-<div class="shot tall">
-  <mdi-monitor-screenshot class="shot-icon" />
-  <div class="shot-name">Screenshot 06 · Export Password Page</div>
-  <div class="shot-desc">"Enter a password" page with the two password fields and Submit button</div>
-  <div class="shot-file">→ public/06.password.png</div>
+<div class="shot-real tall">
+  <img src="/12.review.png" alt="Review Request page" />
 </div>
+<div class="shot-caption"><b>Review Request</b> — the last chance to fix mistakes before Submit.</div>
 
 ---
 layout: top-title-two-cols
@@ -476,7 +423,36 @@ align: c-lt-lt
 
 :: title ::
 
-# Step 7 — Track your request
+# Step 7 — Set the private key password
+
+:: left ::
+
+<div class="step-list">
+  <div><span class="step-no">1</span><div><strong>This is the Private Key Password</strong>It protects your private key — and you will type it <b>again when downloading</b> the certificate.</div></div>
+  <div><span class="step-no">2</span><div><strong>Rules</strong>At least 8 characters, mixing at least two of: upper case, lower case, digits, special characters.</div></div>
+  <div><span class="step-no">3</span><div><strong>Memorize it</strong>The CA cannot recover it. Losing it means re-applying via policy exception.</div></div>
+</div>
+
+<AdmonitionType type='info'>
+Two different passwords exist: this <b>Private Key Password</b> (now), and an <b>Export Password</b> you will set when downloading the <code>.p12</code> (leave it empty to reuse this one). Neither is your LDAP password.
+</AdmonitionType>
+
+:: right ::
+
+<div class="shot-real tall">
+  <img src="/06.password.png" alt="Enter a Password page" />
+</div>
+<div class="shot-caption"><b>Enter a Password</b> — the Private Key Password.</div>
+
+---
+layout: top-title-two-cols
+color: gray-light
+align: c-lt-lt
+---
+
+:: title ::
+
+# Step 8 — Track your request
 
 :: left ::
 
@@ -485,6 +461,7 @@ align: c-lt-lt
 | Status | Meaning | Your action |
 |---|---|---|
 | `PENDING` / `ONHOLD` | Awaiting RA review | Wait; do **not** duplicate requests |
+| `Policy Violation Pending` | Policy exception under review | Use **Recheck Status** to refresh |
 | `SUCCESS` | Issued | Download from My Certificates |
 | `REJECTED` | RA refused | Read the reason, fix, re-apply |
 | `FAILURE` | Workflow error | Save the workflow ID, contact support |
@@ -497,12 +474,10 @@ The browser Back button does <b>not</b> cancel a request. Use the on-page <b>Can
 
 :: right ::
 
-<div class="shot tall">
-  <mdi-monitor-screenshot class="shot-icon" />
-  <div class="shot-name">Screenshot 07 · My Workflows</div>
-  <div class="shot-desc">Workflow list showing one entry in PENDING/SUCCESS with workflow ID, State and Last Update columns</div>
-  <div class="shot-file">→ public/07.workflows.png</div>
+<div class="shot-real tall">
+  <img src="/07.workflows.png" alt="Waiting for approval" />
 </div>
+<div class="shot-caption">After submission — waiting for RA review (here: a policy-exception request).</div>
 
 ---
 layout: section
@@ -541,12 +516,10 @@ align: c-lt-lt
 
 :: right ::
 
-<div class="shot tall">
-  <mdi-monitor-screenshot class="shot-icon" />
-  <div class="shot-name">Screenshot 08 · Migration Login</div>
-  <div class="shot-desc">Login page dropdown showing the "IHEP-2013 certificate migration" authentication option</div>
-  <div class="shot-file">→ public/08.migration_login.png</div>
+<div class="shot-real tall">
+  <img src="/08.migration_login.png" alt="Migration login option" />
 </div>
+<div class="shot-caption">The login page — choose <b>IHEP-2013 certificate migration</b>.</div>
 
 ---
 layout: section
@@ -568,14 +541,11 @@ align: c-lt-lt
 :: left ::
 
 <div class="step-list">
-  <div><span class="step-no">1</span><div><strong>Home → My Certificates</strong>click your certificate's Subject / serial.</div></div>
-  <div><span class="step-no">2</span><div><strong>Action → Download private key/keystore</strong>choose <b>PKCS#12</b> and download.</div></div>
-  <div><span class="step-no">3</span><div><strong>Move the <code>.p12</code> somewhere safe</strong>Out of the shared Downloads folder, restricted permissions. Not in /tmp, not on cloud drives.</div></div>
+  <div><span class="step-no">1</span><div><strong>Issued notification email</strong>arrives with a direct link that opens your certificate.</div></div>
+  <div><span class="step-no">2</span><div><strong>Home → My Certificates</strong>click the certificate's Subject or serial number.</div></div>
+  <div><span class="step-no">3</span><div><strong>Action → Download private key/keystore</strong></div></div>
+  <div><span class="step-no">4</span><div><strong>Move the <code>.p12</code> somewhere safe</strong>Out of the shared Downloads folder, restricted permissions. Not in /tmp, not on cloud drives.</div></div>
 </div>
-
-<br>
-
-**The `.p12` contains:** your certificate + private key + CA chain, encrypted with your export password.
 
 <AdmonitionType type='note'>
 No download action? Either the private key is not held by the CA anymore, or the certificate came from EST — it does not mean the certificate is invalid.
@@ -583,12 +553,40 @@ No download action? Either the private key is not held by the CA anymore, or the
 
 :: right ::
 
-<div class="shot tall">
-  <mdi-monitor-screenshot class="shot-icon" />
-  <div class="shot-name">Screenshot 09 · Certificate Detail + Download</div>
-  <div class="shot-desc">Certificate detail page with the Action area: "Download private key/keystore (PKCS12/PKCS8/Java)" highlighted, PKCS#12 selected</div>
-  <div class="shot-file">→ public/09.download.png</div>
+<div class="shot-real tall">
+  <img src="/09.download.png" alt="Certificate detail download action" />
 </div>
+<div class="shot-caption">Certificate detail — the <b>Action</b> area with the download entry.</div>
+
+---
+layout: top-title-two-cols
+color: gray-light
+align: c-lt-lt
+---
+
+:: title ::
+
+# Download: format and the two passwords
+
+:: left ::
+
+<div class="step-list">
+  <div><span class="step-no">1</span><div><strong>Download Format: PKCS12</strong>confirm it on the <b>Specify Required Format</b> page.</div></div>
+  <div><span class="step-no">2</span><div><strong>Password</strong>enter the <b>Private Key Password</b> you set in Step 7.</div></div>
+  <div><span class="step-no">3</span><div><strong>Export Password</strong>encrypts the downloaded <code>.p12</code> — leave empty to reuse the private key password.</div></div>
+  <div><span class="step-no">4</span><div><strong>Continue → SUCCESS → Download</strong>save the file <b>immediately</b>.</div></div>
+</div>
+
+<AdmonitionType type='warning'>
+The download entry <b>disappears once you leave the SUCCESS page</b>. If you miss it, reopen the certificate and start the download action again.
+</AdmonitionType>
+
+:: right ::
+
+<div class="shot-real tall">
+  <img src="/13.download_password.png" alt="Specify Required Format page" />
+</div>
+<div class="shot-caption"><b>Specify Required Format</b> — PKCS12, Private Key Password, Export Password.</div>
 
 ---
 layout: top-title-two-cols
@@ -637,13 +635,13 @@ color: gray-light
 
 :: content ::
 
-Grid tools expect `~/.globus/usercert.pem` + `userkey.pem`:
+Rename the downloaded `.p12` — it is usually named after you, e.g. `Xiao Han.p12` — to **`myCert.p12`**, and upload it to **KEKCC or whichever server you will use** (e.g. with `scp`). Grid tools expect `~/.globus/usercert.pem` + `userkey.pem`:
 
 ```bash
 mkdir -p "$HOME/.globus" && chmod 700 "$HOME/.globus"
 
-openssl pkcs12 -in 'Xiao Han.p12' -clcerts -nokeys -out "$HOME/.globus/usercert.pem"
-openssl pkcs12 -in 'Xiao Han.p12' -nocerts -out "$HOME/.globus/userkey.pem"
+openssl pkcs12 -in myCert.p12 -clcerts -nokeys -out "$HOME/.globus/usercert.pem"
+openssl pkcs12 -in myCert.p12 -nocerts -out "$HOME/.globus/userkey.pem"
 chmod 644 "$HOME/.globus/usercert.pem"
 chmod 600 "$HOME/.globus/userkey.pem"
 ```
@@ -657,12 +655,8 @@ test "$(openssl x509 -in "$HOME/.globus/usercert.pem" -noout -modulus | openssl 
   && echo 'certificate and key match'
 ```
 
-<AdmonitionType type='note'>
-If <code>openssl pkcs12</code> complains about the format, drop or add <code>-legacy</code> depending on your OpenSSL version. Never send the <code>.p12</code> to anyone to "fix" it.
-</AdmonitionType>
-
-<AdmonitionType type='info'>
-Run these on <b>KEKCC</b>, an IHEP login node, or your laptop: copy the <code>.p12</code> over with <code>scp</code>, convert, then <b>delete the <code>.p12</code></b> on that machine.
+<AdmonitionType type='warning'>
+Delete <code>myCert.p12</code> on that server once the conversion succeeds — don't leave copies of the encrypted key around. If <code>openssl pkcs12</code> complains about the format, drop or add <code>-legacy</code>. Never send the <code>.p12</code> to anyone to "fix" it.
 </AdmonitionType>
 
 ---
@@ -718,8 +712,9 @@ gb2_proxy_init
 **What the proxy output shows:**
 
 ```text
-subject      : /C=CN/O=HEP/O=IHEP/CN=Xiao Han
-issuer       : /C=CN/O=HEP/CN=IHEP CA 2026
+subject      : /C=CN/O=HEP/O=IHEP/OU=CC/CN=hanx14/CN=Xiao Han
+issuer       : /C=CN/O=HEP/CN=Institute of High Energy Physics
+               Certification Authority 2026
 timeleft     : 23:53:58
 DIRAC group  : belle
 VOMS         : True
@@ -924,19 +919,24 @@ For **non-human identities**: experiment pilots, production automation, service 
 - **OU / O** — the responsible group
 - SAN email = the responsible person's LDAP email (automatic)
 
+<AdmonitionType type='important'>
+Every Robot certificate needs a <b>responsible person</b>. Ownership change, purpose change or key leak ⇒ revoke and re-apply — do not "migrate" a Robot cert to someone else.
+</AdmonitionType>
+
 :: right ::
+
+<div class="shot-real tall">
+  <img src="/14.robot_subject.png" alt="Robot certificate subject form" />
+</div>
+<div class="shot-caption"><b>Robot certificate</b> — Experiment + Submodule / purpose; the second CN is fixed to <b>Robot</b>.</div>
+
+<br>
 
 **Resulting DN shape:**
 
 ```text
 CN=Belle pilot,CN=Robot,OU=<dept>,O=<inst>,O=HEP,C=CN
 ```
-
-<br>
-
-<AdmonitionType type='important'>
-Every Robot certificate needs a <b>responsible person</b>. Ownership change, purpose change or key leak ⇒ revoke and re-apply — do not "migrate" a Robot cert to someone else.
-</AdmonitionType>
 
 ---
 layout: top-title-two-cols
