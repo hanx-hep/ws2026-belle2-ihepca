@@ -94,7 +94,8 @@ The grid is a <b>distributed computing system</b> used by Belle II — and many 
 <div class="shot-real">
   <img src="/15.grid_map.png" alt="Worldwide grid computing map" />
 </div>
-<div class="shot-caption">Grid sites and transfers worldwide — computing centers, storage elements and their connections, monitored in real time.</div>
+<div class="shot-caption">Grid sites and transfers worldwide — computing centers, storage elements and their connections.<br/>
+<a href="https://belle2.jp/computing/"><mdi-open-in-new /> View the live map</a> at belle2.jp/computing (opens in your browser).</div>
 
 <div class="mt-3 text-sm" style="line-height:1.6">
 <b>Your path today:</b><br/>
