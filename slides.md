@@ -91,18 +91,15 @@ The grid is a <b>distributed computing system</b> used by Belle II — and many 
 
 :: right ::
 
-**From certificate to analysis — the chain:**
-
-<div class="step-list mt-2">
-  <div><span class="step-no">1</span><div><strong>Grid certificate</strong>issued by the IHEP CA — your identity</div></div>
-  <div><span class="step-no">2</span><div><strong>Belle II VO membership</strong>registers your certificate in the experiment</div></div>
-  <div><span class="step-no">3</span><div><strong>Proxy</strong><code>gb2_proxy_init</code> — short-lived credential</div></div>
-  <div><span class="step-no">4</span><div><strong>gbasf2 jobs</strong>analysis on grid sites, watched in DIRAC</div></div>
+<div class="shot-real">
+  <img src="/15.grid_map.png" alt="Worldwide grid computing map" />
 </div>
+<div class="shot-caption">Grid sites and transfers worldwide — computing centers, storage elements and their connections, monitored in real time.</div>
 
-<AdmonitionType type='note'>
-This training walks you through every link of this chain — today you build link 1 and 2.
-</AdmonitionType>
+<div class="mt-3 text-sm" style="line-height:1.6">
+<b>Your path today:</b><br/>
+<mdi-certificate /> certificate&nbsp;→&nbsp;<mdi-account-group-outline /> VO membership&nbsp;→&nbsp;<mdi-key /> proxy&nbsp;→&nbsp;<mdi-cog-outline /> gbasf2 jobs
+</div>
 
 ---
 layout: top-title-two-cols
@@ -615,12 +612,10 @@ Importing only a <code>.crt</code>/<code>.pem</code> (public part) does <b>not</
 
 :: right ::
 
-<div class="shot tall">
-  <mdi-monitor-screenshot class="shot-icon" />
-  <div class="shot-name">Screenshot 10 · Firefox Certificate Manager</div>
-  <div class="shot-desc">Firefox "Your Certificates" tab with the imported IHEP CA entry selected, showing Issued By and the SAN details</div>
-  <div class="shot-file">→ public/10.firefox_certs.png</div>
+<div class="shot-real tall">
+  <img src="/10.firefox_certs.png" alt="Firefox certificate manager" />
 </div>
+<div class="shot-caption">Firefox <b>Certificate Manager → Your Certificates → Import</b> — pick your <code>.p12</code> and enter the Export Password.</div>
 
 <div class="text-sm mt-3" style="opacity:.75"><mdi-lightbulb-on-outline /> Tip: stick to one browser through apply → download → import, and avoid browser updates mid-workflow.</div>
 
@@ -684,12 +679,10 @@ Membership binds to your <b>DN</b>. A normal renewal keeps your DN — membershi
 
 :: right ::
 
-<div class="shot tall">
-  <mdi-monitor-screenshot class="shot-icon" />
-  <div class="shot-name">Screenshot 11 · Belle II VOMS Page</div>
-  <div class="shot-desc">voms.cc.kek.jp VOMS home for the belle VO, logged in with the new certificate, showing the membership request action</div>
-  <div class="shot-file">→ public/11.voms.png</div>
+<div class="shot-real tall">
+  <img src="/11.voms.png" alt="VOMS admin page for the belle VO" />
 </div>
+<div class="shot-caption"><b>VOMS Admin for the belle VO</b> — log in with your certificate; your DN and membership appear on your profile page.</div>
 
 ---
 layout: top-title-two-cols
@@ -777,6 +770,11 @@ gbasf2 ./ana01.py \
 
 - `-s` basf2 release · `-p` your project name · `--input_dslist` input dataset
 - Monitor jobs in the **DIRAC portal**: <a href="https://dirac.cc.kek.jp:8443/DIRAC/">dirac.cc.kek.jp:8443/DIRAC</a>
+
+<div class="shot-real mt-3" style="max-height:250px">
+  <img src="/16.dirac_portal.png" alt="BelleDIRAC job monitor" style="max-height:250px" />
+</div>
+<div class="shot-caption">The BelleDIRAC <b>Job Monitor</b> — status, sites and history of your submitted jobs.</div>
 
 ---
 layout: top-title-two-cols
