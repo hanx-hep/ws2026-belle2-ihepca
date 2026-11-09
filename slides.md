@@ -239,15 +239,11 @@ align: c-lt-lt
 :: left ::
 
 <div class="step-list">
-  <div><span class="step-no">1</span><div><strong>Open the WebUI</strong><a href="https://gridca.ihep.ac.cn/webui/ihepca/">https://gridca.ihep.ac.cn/webui/ihepca/</a> — HTTPS only.</div></div>
-  <div><span class="step-no">2</span><div><strong>Choose authentication method</strong>In the dropdown select <b>IHEP Account</b> (formerly IHEP SSO).</div></div>
-  <div><span class="step-no">3</span><div><strong>Enter LDAP credentials</strong>Username + password, then <b>Login</b>.</div></div>
+  <div><span class="step-no">1</span><div><strong>Open the WebUI</strong><a href="https://gridca.ihep.ac.cn/webui/ihepca/">https://gridca.ihep.ac.cn/webui/ihepca/</a></div></div>
+  <div><span class="step-no">2</span><div><strong>Choose authentication method</strong>In the dropdown select <b>IHEP Account</b>.</div></div>
+  <div><span class="step-no">3</span><div><strong>Enter IHEP credentials</strong>Username + password, then <b>Login</b>.</div></div>
   <div><span class="step-no">4</span><div><strong>Verify your account</strong>Top-right corner must show <b>your</b> account. Logout via the button — not by closing the tab.</div></div>
 </div>
-
-<AdmonitionType type='warning'>
-<code>Login with the given credentials failed!</code> → check LDAP account/password, do <b>not</b> brute-force different accounts; contact CA support to check the LDAP mapping.
-</AdmonitionType>
 
 :: right ::
 
@@ -255,6 +251,12 @@ align: c-lt-lt
   <img src="/01.login.png" alt="WebUI login page" />
 </div>
 <div class="shot-caption">The WebUI login page — pick <b>IHEP Account</b> in the Authentication method dropdown.</div>
+
+<div class="mt-3">
+<AdmonitionType type='warning'>
+<code>Login with the given credentials failed!</code> → check LDAP account/password, do <b>not</b> brute-force different accounts; contact CA support to check the LDAP mapping.
+</AdmonitionType>
+</div>
 
 ---
 layout: top-title-two-cols
@@ -465,18 +467,18 @@ align: c-lt-lt
 | `REJECTED` | RA refused | Read the reason, fix, re-apply |
 | `FAILURE` | Workflow error | Save the workflow ID, contact support |
 
-<br>
-
-<AdmonitionType type='warning'>
-The browser Back button does <b>not</b> cancel a request. Use the on-page <b>Cancel</b> action if you truly need to withdraw one.
-</AdmonitionType>
-
 :: right ::
 
 <div class="shot-real tall">
   <img src="/07.workflows.png" alt="Waiting for approval" />
 </div>
 <div class="shot-caption">After submission — waiting for RA review (here: a policy-exception request).</div>
+
+<div class="mt-3">
+<AdmonitionType type='warning'>
+The browser Back button does <b>not</b> cancel a request. Use the on-page <b>Cancel</b> action if you truly need to withdraw one.
+</AdmonitionType>
+</div>
 
 ---
 layout: section
@@ -501,7 +503,7 @@ align: c-lt-lt
 
 <div class="step-list mt-2">
   <div><span class="step-no">1</span><div>Install the old personal certificate <b>with its private key</b> into your browser first.</div></div>
-  <div><span class="step-no">2</span><div>Open the WebUI — the browser immediately pops up the <b>certificate selection</b>: pick your <b>personal</b> IHEP-2013 certificate (not a Host/RA cert).</div></div>
+  <div><span class="step-no">2</span><div>Open the WebUI — the browser pops up the <b>certificate selection</b>: pick your <b>personal</b> IHEP-2013 certificate.</div></div>
   <div><span class="step-no">3</span><div>In <b>Authentication method</b> choose <b>IHEP-2013 certificate migration</b> and click <b>Login</b>.</div></div>
   <div><span class="step-no">4</span><div>Identity fields are <b>auto-filled</b> from the old cert + LDAP — no re-typing. Set a password, submit, download.</div></div>
 </div>
@@ -515,13 +517,13 @@ align: c-lt-lt
 
 :: right ::
 
-<div class="shot-real" style="max-height:215px">
-  <img src="/17.migration_profile.png" alt="Migration profile auto-selected" style="max-height:215px" />
+<div class="shot-real" style="max-height:185px">
+  <img src="/08.migration_login.png" alt="Migration login option" style="max-height:185px" />
 </div>
-<div class="shot-caption">Profile <b>auto-selected</b>: Migrate IHEP-2013 User Certificate.</div>
+<div class="shot-caption">The login page — choose <b>IHEP-2013 certificate migration</b>.</div>
 
-<div class="shot-real mt-2" style="max-height:215px">
-  <img src="/18.migration_subject.png" alt="Migration subject auto-filled" style="max-height:215px" />
+<div class="shot-real mt-2" style="max-height:185px">
+  <img src="/18.migration_subject.png" alt="Migration subject auto-filled" style="max-height:185px" />
 </div>
 <div class="shot-caption">Subject <b>auto-filled</b> from the old certificate and LDAP — read-only.</div>
 
