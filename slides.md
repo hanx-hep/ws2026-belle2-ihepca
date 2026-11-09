@@ -716,12 +716,6 @@ align: c-lt-lt
   <div><span class="step-no">4</span><div><strong>Enter your new DN</strong>slash form, e.g. <code>/C=CN/O=HEP/O=IHEP/OU=CC/CN=duran/CN=Ran Du</code> → <b>Request certificate</b>, then wait for VO admin approval.</div></div>
 </div>
 
-<div class="mt-3">
-<AdmonitionType type='important'>
-The form also accepts a <b>certificate file upload</b> — if you use it, upload the <b>PEM certificate only</b> (<code>usercert.pem</code>). <b>Never upload your <code>.p12</code> — it contains your private key.</b>
-</AdmonitionType>
-</div>
-
 :: right ::
 
 <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.7rem">
@@ -741,6 +735,12 @@ The form also accepts a <b>certificate file upload</b> — if you use it, upload
     <div class="shot-real" style="max-height:200px"><img src="/22.voms_add4.png" alt="Pending certificate" style="max-height:200px" /></div>
     <div class="shot-caption">New certificate <b>waiting for approval</b></div>
   </div>
+</div>
+
+<div class="mt-3">
+<AdmonitionType type='important'>
+The form also accepts a <b>certificate file upload</b> — if you use it, upload the <b>PEM certificate only</b> (<code>usercert.pem</code>). <b>Never upload your <code>.p12</code> — it contains your private key.</b>
+</AdmonitionType>
 </div>
 
 ---
@@ -821,14 +821,12 @@ Always run your script with <b>basf2 first</b> on local samples — only then su
 **Submit a job — same logic as basf2:**
 
 ```bash
-gbasf2 ./ana01.py \
-  -s release-08-01-05 \
-  -p 20261114_myproject \
-  --input_dslist input1.txt
+gbasf2 ./ana01.py -s release-08-01-05 \
+  -p 20261114_myproject --input_dslist input1.txt
 ```
 
 - `-s` basf2 release · `-p` your project name · `--input_dslist` input dataset
-- Monitor jobs in the **DIRAC portal**: <a href="https://dirac.cc.kek.jp:8443/DIRAC/">dirac.cc.kek.jp:8443/DIRAC</a>
+- Monitor jobs in the <a href="https://dirac.cc.kek.jp:8443/DIRAC/"><b>DIRAC portal</b></a>
 
 <div class="shot-real mt-3" style="max-height:250px">
   <img src="/16.dirac_portal.png" alt="BelleDIRAC job monitor" style="max-height:250px" />
