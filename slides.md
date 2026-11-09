@@ -700,6 +700,52 @@ Membership binds to your <b>DN</b>. A normal renewal keeps your DN — membershi
 ---
 layout: top-title-two-cols
 color: gray-light
+align: c-lt-lt
+---
+
+:: title ::
+
+# New certificate: update your VOMS binding
+
+:: left ::
+
+<div class="step-list">
+  <div><span class="step-no">1</span><div><strong>Log in with the old certificate</strong>the one already bound to your VO account.</div></div>
+  <div><span class="step-no">2</span><div><strong>Add an additional certificate</strong>on your profile page, under <b>Certificates</b>.</div></div>
+  <div><span class="step-no">3</span><div><strong>Select the new issuer</strong><i>Institute of High Energy Physics Certification Authority 2026</i> in the CA list.</div></div>
+  <div><span class="step-no">4</span><div><strong>Enter your new DN</strong>slash form, e.g. <code>/C=CN/O=HEP/O=IHEP/OU=CC/CN=duran/CN=Ran Du</code> → <b>Request certificate</b>, then wait for VO admin approval.</div></div>
+</div>
+
+<div class="mt-3">
+<AdmonitionType type='important'>
+The form also accepts a <b>certificate file upload</b> — if you use it, upload the <b>PEM certificate only</b> (<code>usercert.pem</code>). <b>Never upload your <code>.p12</code> — it contains your private key.</b>
+</AdmonitionType>
+</div>
+
+:: right ::
+
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:0.7rem">
+  <div>
+    <div class="shot-real" style="max-height:200px"><img src="/19.voms_add1.jpg" alt="VOMS profile, add certificate" style="max-height:200px" /></div>
+    <div class="shot-caption">Profile → <b>Add an additional certificate</b></div>
+  </div>
+  <div>
+    <div class="shot-real" style="max-height:200px"><img src="/20.voms_add2.png" alt="CA issuer list" style="max-height:200px" /></div>
+    <div class="shot-caption">Pick the <b>2026 issuer</b> in the CA list</div>
+  </div>
+  <div>
+    <div class="shot-real" style="max-height:200px"><img src="/21.voms_add3.png" alt="DN entry form" style="max-height:200px" /></div>
+    <div class="shot-caption">Enter the new DN — or upload the <b>PEM only</b></div>
+  </div>
+  <div>
+    <div class="shot-real" style="max-height:200px"><img src="/22.voms_add4.png" alt="Pending certificate" style="max-height:200px" /></div>
+    <div class="shot-caption">New certificate <b>waiting for approval</b></div>
+  </div>
+</div>
+
+---
+layout: top-title-two-cols
+color: gray-light
 ---
 
 :: title ::
