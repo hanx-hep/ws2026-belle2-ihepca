@@ -831,7 +831,7 @@ gbasf2 ./ana01.py -s release-08-01-05 \
 <div class="shot-real mt-3" style="max-height:250px">
   <img src="/16.dirac_portal.png" alt="BelleDIRAC job monitor" style="max-height:250px" />
 </div>
-<div class="shot-caption">The BelleDIRAC <b>Job Monitor</b> — status, sites and history of your submitted jobs.</div>
+<div class="shot-caption">The BelleDIRAC <b>Job Monitor</b></div>
 
 ---
 layout: top-title-two-cols
