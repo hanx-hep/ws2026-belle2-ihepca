@@ -1099,7 +1099,7 @@ align: c-lt-lt
 
 <div class="step-list mt-2">
   <div><span class="step-no">1</span><div><strong>Check your IHEP Account login and LDAP email</strong>— everything hangs on these two.</div></div>
-  <div><span class="step-no">2</span><div><strong>Request / migrate your certificate</strong>at <a href="https://gridca.ihep.ac.cn/webui/ihepca/">gridca.ihep.ac.cn</a> — new request, or the IHEP-2013 migration entry.</div></div>
+  <div><span class="step-no">2</span><div><strong>Request / migrate your certificate</strong>at gridca.ihep.ac.cn — new request, or the IHEP-2013 migration entry.</div></div>
   <div><span class="step-no">3</span><div><strong>Install to browser + <code>.globus</code></strong>— bring a working proxy to the hands-on session.</div></div>
   <div><span class="step-no">4</span><div><strong>Register / update your VOMS membership</strong>join the belle VO — or add your new DN.</div></div>
 </div>
