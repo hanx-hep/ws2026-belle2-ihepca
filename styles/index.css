@@ -131,6 +131,19 @@
   font-size: 1.02rem;
 }
 
+.step-list.compact {
+  gap: 0.5rem;
+}
+
+.step-list.compact > div {
+  padding: 0.5rem 0.65rem;
+  font-size: 0.86rem;
+}
+
+.step-list.compact strong {
+  font-size: 0.9rem;
+}
+
 .step-no {
   display: inline-flex;
   align-items: center;

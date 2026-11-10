@@ -1112,7 +1112,7 @@ align: c-lt-lt
 
 :: right ::
 
-<div class="step-list mt-2">
+<div class="step-list compact mt-2">
   <div><mdi-certificate /><div><strong>IHEP CA WebUI</strong><a href="https://gridca.ihep.ac.cn/webui/ihepca/">gridca.ihep.ac.cn/webui/ihepca</a></div></div>
   <div><mdi-book-open-variant /><div><strong>IHEP CA user guide</strong><a href="https://cchelp.ihep.ac.cn/grid/new-ca/">cchelp.ihep.ac.cn/grid/new-ca</a></div></div>
   <div><mdi-book-open-variant /><div><strong>gbasf2 user manual</strong><a href="https://software.belle2.org/development/sphinx/online_book/computing/gbasf2.html">Belle II online book — gbasf2</a></div></div>
