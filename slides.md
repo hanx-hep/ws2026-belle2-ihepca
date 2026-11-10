@@ -8,7 +8,7 @@ lineNumbers: true
 neversink_string: "Winter School 2026 · Belle II China Group"
 title: Using the New IHEP Grid CA
 titleTemplate: '%s - Xiao Han'
-favicon: /ihep_dci.svg
+favicon: /ihep_grid_ca_icon_refined.svg
 fonts: false
 transition: fade
 ---
