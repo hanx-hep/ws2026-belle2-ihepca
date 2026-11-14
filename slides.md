@@ -1139,13 +1139,21 @@ title: credits/people
 ---
 
 <div class="credits-wrap">
-  <div class="credits-title"><mdi-certificate-outline /> IHEP Computing Center — PKI Team</div>
-  <div class="credits-grid">
-    <div class="k">Reporter</div><div>Xiao Han · <i>IHEP, CC</i></div>
-    <div class="k">Current Developer</div><div>Xiao Han · <i>IHEP, CC</i></div>
-    <div class="k">People</div><div>Xiao Han · <i>CA Administrator · RA Administrator</i><br/>Gongxing Sun · <i>RA Administrator (former)</i> · Tian Yan · <i>CA Administrator (former)</i></div>
-    <div class="k">Acknowledgements</div><div>The Interoperable Global Trust Federation (IGTF) · The Asia Pacific Grid Policy Management Authority (APGridPMA) · The European Policy Management Authority for Grid Authentication (EUGridPMA)</div>
-    <div class="k">WebUI</div><div><a href="https://gridca.ihep.ac.cn/webui/ihepca/"><mdi-open-in-new /> gridca.ihep.ac.cn</a></div>
+  <div class="credits-cols">
+    <div>
+      <div class="credits-title"><mdi-certificate-outline /> IHEP Computing Center — PKI Team</div>
+      <div class="credits-grid">
+        <div class="k">Reporter</div><div>Xiao Han · <i>IHEP, CC</i></div>
+        <div class="k">Current Developer</div><div>Xiao Han · <i>IHEP, CC</i></div>
+        <div class="k">People</div><div>Xiao Han · <i>CA Administrator · RA Administrator</i><br/>Gongxing Sun · <i>RA Administrator (former)</i> · Tian Yan · <i>CA Administrator (former)</i></div>
+        <div class="k">Acknowledgements</div><div>The Interoperable Global Trust Federation (IGTF) · The Asia Pacific Grid Policy Management Authority (APGridPMA) · The European Policy Management Authority for Grid Authentication (EUGridPMA)</div>
+      </div>
+    </div>
+    <div class="credits-side">
+      <div class="credits-link"><a href="https://gridca.ihep.ac.cn/webui/ihepca/"><mdi-open-in-new /> gridca.ihep.ac.cn</a></div>
+      <img class="wechat-card" src="/23.wechat_group.jpg" alt="Belle and Belle II China WeChat group" />
+      <div class="credits-caption">WeChat group · Belle&amp;Belle II 中国人组</div>
+    </div>
   </div>
   <div class="credits-q"><strong>Questions?</strong></div>
   <div class="credits-thanks">Thank you!</div>

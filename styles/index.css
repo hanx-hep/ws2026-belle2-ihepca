@@ -209,6 +209,35 @@
   text-align: left;
 }
 
+.credits-cols {
+  display: grid;
+  grid-template-columns: 1fr 290px;
+  gap: 1.6rem;
+  align-items: start;
+}
+
+.credits-side {
+  text-align: center;
+}
+
+.credits-link a {
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.wechat-card {
+  width: 100%;
+  margin-top: 0.8rem;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.credits-caption {
+  font-size: 0.78rem;
+  opacity: 0.75;
+  margin-top: 0.4rem;
+}
+
 .toc ul {
   margin: 0;
   padding-left: 1.1rem;
