@@ -1067,9 +1067,17 @@ color: gray-light
 | Browser never offers the certificate | Import the `.p12` (with key!); check cached choices |
 | Certificate chain fails | Client must trust the **new Root + Issuing CA**; CRL URLs reachable |
 
-<AdmonitionType type='info'>
-<mdi-face-agent /> Contact support with: certificate serial or Subject · workflow ID · time (UTC) · full error text. <b>Never</b> send private keys, <code>.p12</code>, or passwords.
-</AdmonitionType>
+<div style="display:flex;gap:1.1rem;align-items:flex-start;margin-top:0.9rem">
+  <div style="flex:1">
+    <AdmonitionType type='info'>
+    <mdi-face-agent /> Contact support with: certificate serial or Subject · workflow ID · time (UTC) · full error text. <b>Never</b> send private keys, <code>.p12</code>, or passwords.
+    </AdmonitionType>
+  </div>
+  <div style="width:190px;text-align:center">
+    <img src="/23.wechat_group.jpg" alt="Belle and Belle II China WeChat group" style="width:100%;border-radius:8px;border:1px solid #d1d5db" />
+    <div class="credits-caption">WeChat · Belle&amp;Belle II 中国人组</div>
+  </div>
+</div>
 
 ---
 layout: top-title
@@ -1131,9 +1139,6 @@ align: c-lt-lt
   <div><mdi-help-circle-outline /><div><strong>Questions &amp; forum</strong><a href="https://questions.belle2.org/questions/">questions.belle2.org</a></div></div>
   <div><mdi-monitor-dashboard /><div><strong>DIRAC portal</strong><a href="https://dirac.cc.kek.jp:8443/DIRAC/">dirac.cc.kek.jp/DIRAC</a></div></div>
 </div>
-
-<img class="wechat-mini" src="/23.wechat_group.jpg" alt="Belle and Belle II China WeChat group" />
-<div class="credits-caption">WeChat group · Belle&amp;Belle II 中国人组</div>
 
 ---
 layout: cover
