@@ -209,33 +209,19 @@
   text-align: left;
 }
 
-.credits-cols {
-  display: grid;
-  grid-template-columns: 1fr 290px;
-  gap: 1.6rem;
-  align-items: start;
-}
-
-.credits-side {
-  text-align: center;
-}
-
-.credits-link a {
-  font-weight: 600;
-  white-space: nowrap;
-}
-
-.wechat-card {
-  width: 100%;
-  margin-top: 0.8rem;
-  border-radius: 10px;
-  border: 1px solid rgba(255, 255, 255, 0.18);
+.wechat-mini {
+  display: block;
+  width: 240px;
+  margin: 0.7rem auto 0;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
 }
 
 .credits-caption {
   font-size: 0.78rem;
   opacity: 0.75;
   margin-top: 0.4rem;
+  text-align: center;
 }
 
 .toc ul {
