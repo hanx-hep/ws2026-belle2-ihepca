@@ -209,6 +209,28 @@
   text-align: left;
 }
 
+.toc ul {
+  margin: 0;
+  padding-left: 1.1rem;
+}
+
+.toc > ul > li {
+  margin: 0.34rem 0 !important;
+  font-size: 0.98rem;
+  line-height: 1.25;
+}
+
+.toc li ul {
+  margin: 0.05rem 0 0 0 !important;
+  padding-left: 1rem;
+}
+
+.toc li li {
+  margin: 0 !important;
+  font-size: 0.85rem;
+  line-height: 1.2;
+}
+
 .credits-title {
   text-align: center;
   font-weight: 700;

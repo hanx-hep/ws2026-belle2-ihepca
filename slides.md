@@ -44,23 +44,33 @@ align: cm-lm
 
 :: content ::
 
-- **The Belle II Grid & Your Certificate**
-    - *What is the grid · What changed*
+<div class="toc">
+
+- **The Grid & the New CA**
+    - *What the grid is · what changed*
 - **Before You Start**
-    - *Preparation · Certificate Types*
-- **Hands-on: Get Your User Certificate**
+    - *Preparation · certificate types*
+- **Hands-on: User Certificate**
+    - *Apply · review · approve · download*
 - **Migrate from IHEP-2013**
-- **Download · Install · Use on the Grid**
+    - *One-time path for old certificates*
+- **Use It on the Grid**
+    - *VO · VOMS · proxy · gbasf2*
 - **Renewal & Revocation**
+    - *Keep it valid · revoke when compromised*
 - **Robot & Host Certificates**
+    - *For services and machines*
 - **Troubleshooting & Security**
+    - *FAQ · safe habits · security*
+
+</div>
 
 ---
 layout: section
 color: cyan-light
 ---
 
-# 1 · Why & What Changed
+# 1 · The Grid & the New CA
 
 ---
 layout: top-title-two-cols
@@ -224,7 +234,7 @@ layout: section
 color: blue-light
 ---
 
-# 3 · Hands-on: Your User Certificate
+# 3 · Hands-on: User Certificate
 
 ---
 layout: top-title-two-cols
@@ -532,7 +542,7 @@ layout: section
 color: green-light
 ---
 
-# 5 · Download · Install · Use
+# 5 · Use It on the Grid
 
 ---
 layout: top-title-two-cols
