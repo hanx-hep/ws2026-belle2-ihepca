@@ -1142,7 +1142,7 @@ title: credits/people
   <div class="credits-grid">
     <div class="k">Reporter</div><div>Xiao Han · <i>IHEP, CC</i></div>
     <div class="k">Current Developer</div><div>Xiao Han · <i>IHEP, CC</i></div>
-    <div class="k">People</div><div>Gongxing SUN · <i>RA Administrator</i> &nbsp;·&nbsp; Tian YAN · <i>CA Administrator (former)</i> &nbsp;·&nbsp; Xiao HAN · <i>CA Administrator</i></div>
+    <div class="k">People</div><div>Xiao HAN · <i>CA Administrator · RA Administrator</i><br/>Gongxing SUN · <i>RA Administrator (former)</i> · Tian YAN · <i>CA Administrator (former)</i></div>
     <div class="k">Acknowledgements</div><div>The Interoperable Global Trust Federation (IGTF) · The Asia Pacific Grid Policy Management Authority (APGridPMA) · The European Policy Management Authority for Grid Authentication (EUGridPMA)</div>
     <div class="k">WebUI</div><div><a href="https://gridca.ihep.ac.cn/webui/ihepca/"><mdi-open-in-new /> gridca.ihep.ac.cn</a></div>
   </div>
