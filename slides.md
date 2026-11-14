@@ -6,16 +6,16 @@ theme: neversink
 routerMode: hash
 lineNumbers: true
 neversink_string: "Winter School 2026 · Belle II China Group"
-title: Using the New IHEP Grid CA
+title: Grid Computing for Belle II Analysis
 titleTemplate: '%s - Xiao Han'
 favicon: /ihep_grid_ca_icon_refined.svg
 fonts: false
 transition: fade
 ---
 
-### Using the New IHEP Grid CA
+### Grid Computing for Belle II Analysis
 
-#### <mdi-certificate /> A Hands-on Certificate Training for Users
+#### <mdi-earth /> Certificates · VOMS · gbasf2 — hands-on with the new IHEP CA
 
 <br>
 
@@ -1142,7 +1142,7 @@ title: credits/people
   <div class="credits-grid">
     <div class="k">Reporter</div><div>Xiao Han · <i>IHEP, CC</i></div>
     <div class="k">Current Developer</div><div>Xiao Han · <i>IHEP, CC</i></div>
-    <div class="k">People</div><div>Xiao HAN · <i>CA Administrator · RA Administrator</i><br/>Gongxing SUN · <i>RA Administrator (former)</i> · Tian YAN · <i>CA Administrator (former)</i></div>
+    <div class="k">People</div><div>Xiao Han · <i>CA Administrator · RA Administrator</i><br/>Gongxing Sun · <i>RA Administrator (former)</i> · Tian Yan · <i>CA Administrator (former)</i></div>
     <div class="k">Acknowledgements</div><div>The Interoperable Global Trust Federation (IGTF) · The Asia Pacific Grid Policy Management Authority (APGridPMA) · The European Policy Management Authority for Grid Authentication (EUGridPMA)</div>
     <div class="k">WebUI</div><div><a href="https://gridca.ihep.ac.cn/webui/ihepca/"><mdi-open-in-new /> gridca.ihep.ac.cn</a></div>
   </div>
