@@ -9,6 +9,7 @@ neversink_string: "Winter School 2026 · Belle II China Group"
 title: Grid Computing for Belle II Analysis
 titleTemplate: '%s - Xiao Han'
 favicon: /ihep_grid_ca_icon_refined.svg
+download: './ws2026-belle2-ihepca.pdf'
 fonts: false
 transition: fade
 ---

@@ -6,11 +6,16 @@
     "dev": "slidev --host 0.0.0.0",
     "build": "slidev build",
     "postbuild": "node scripts-strip-fonts.cjs",
-    "export": "slidev export"
+    "export": "slidev export",
+    "export:pdf": "node scripts/export-pdf.cjs"
   },
   "dependencies": {
     "@iconify-json/mdi": "^1.2.3",
     "@slidev/cli": "^52.15.2",
     "slidev-theme-neversink": "^0.4.1"
+  },
+  "devDependencies": {
+    "pdf-lib": "^1.17.1",
+    "playwright-chromium": "^1.58.2"
   }
 }
